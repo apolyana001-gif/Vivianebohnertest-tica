@@ -995,7 +995,8 @@ section[id] {
     }
 
     .hero-conteudo {
-        width: 100%;
+        width: min(100%, 420px);
+        margin-left: clamp(18px, 6vw, 42px);
         padding-top: 0;
         padding-right: 0;
         padding-bottom: 42px;
