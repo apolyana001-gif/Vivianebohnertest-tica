@@ -1,0 +1,1089 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background-color: var(--oliva-profundo);
+    color: #f5f1e8;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   CORES DA MARCA
+===================================================== */
+
+:root {
+    --oliva-profundo: #293321;
+    --oliva-suave: #343e29;
+    --oliva-escuro: #1d2418;
+    --dourado: #a99577;
+    --dourado-claro: #c5b491;
+    --dourado-escuro: #7f6e52;
+    --branco: #f8f5ed;
+    --cinza: #b9b5ac;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    z-index: 1000;
+
+    background: rgba(41, 51, 33, 0.96);
+
+    transition: 0.3s ease;
+}
+
+
+.header-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.menu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding-top: 40px;
+}
+
+
+.menu a {
+    position: relative;
+
+    color: var(--branco);
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background-color: var(--dourado);
+
+    transition: 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--dourado-claro);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   BOTÃO MENU MOBILE
+===================================================== */
+
+.menu-mobile {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: var(--dourado);
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   HERO / CAPA
+===================================================== */
+
+.hero {
+    position: relative;
+
+    height: max(95vh, calc(100vw * 4 / 3));
+    min-height: 95vh;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-color: var(--oliva-profundo);
+}
+
+
+/* =====================================================
+   LOGO COMO MARCA-D'ÁGUA
+===================================================== */
+
+.logo-marca-dagua {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    width: 560px;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    opacity: 0.28;
+
+    mix-blend-mode: screen;
+}
+
+.logo-marca-dagua img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+
+/* =====================================================
+   FOTO DA CAPA
+===================================================== */
+
+.hero-imagem {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+.hero-imagem img {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    transform: translateX(-50%);
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    display: block;
+}
+
+.hero-imagem::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(18, 23, 14, 0.72) 0%,
+            rgba(18, 23, 14, 0.42) 32%,
+            rgba(18, 23, 14, 0.08) 65%,
+            rgba(18, 23, 14, 0) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(18, 23, 14, 0.55) 0%,
+            rgba(18, 23, 14, 0) 35%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   CONTEÚDO DA CAPA
+===================================================== */
+
+.hero-conteudo {
+    position: relative;
+
+    z-index: 4;
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding-top: 260px;
+
+    padding-right: 50%;
+}
+
+
+.hero-subtitulo {
+    margin-bottom: 20px;
+
+    color: var(--dourado-claro);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+
+.hero h1 {
+    max-width: 600px;
+
+    margin-bottom: 25px;
+
+    color: var(--branco);
+
+    font-size: clamp(45px, 6vw, 78px);
+
+    font-weight: 400;
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    color: var(--dourado-claro);
+
+    font-style: italic;
+}
+
+
+.hero-texto {
+    max-width: 450px;
+
+    margin-bottom: 35px;
+
+    color: #e5e1d8;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.hero-subtitulo {
+    margin-bottom: 20px;
+
+    color: var(--dourado-claro);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    max-width: 600px;
+
+    margin-bottom: 25px;
+
+    color: var(--branco);
+
+    font-size: clamp(45px, 6vw, 78px);
+
+    font-weight: 400;
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--dourado-claro);
+
+    font-style: italic;
+}
+
+.hero-texto {
+    max-width: 450px;
+
+    margin-bottom: 35px;
+
+    color: #e5e1d8;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+.botao {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 210px;
+
+    padding: 16px 28px;
+
+    border: 1px solid var(--dourado);
+
+    background: var(--dourado);
+
+    color: var(--oliva-escuro);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+.botao:hover {
+    background: transparent;
+
+    color: var(--dourado-claro);
+
+    transform: translateY(-2px);
+}
+
+.botao-instagram {
+    margin-top: 12px;
+    background: transparent;
+    color: var(--dourado-claro);
+}
+
+.botao-instagram:hover {
+    background: var(--dourado);
+    color: var(--oliva-escuro);
+}
+
+
+/* =====================================================
+   SEÇÕES
+===================================================== */
+
+section[id] {
+    scroll-margin-top: 110px;
+}
+
+.quem-sou-eu,
+.procedimentos,
+.resultados,
+.sua-experiencia,
+.contato {
+    padding: 110px 0;
+}
+
+.quem-sou-eu {
+    background-color: var(--oliva-profundo);
+}
+
+.sua-experiencia {
+    background-color: var(--oliva-suave);
+}
+
+.procedimentos {
+    background-color: var(--oliva-suave);
+}
+
+.resultados {
+    background-color: var(--oliva-profundo);
+}
+
+.resultados-galeria,
+.sua-experiencia-galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.resultado-foto {
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(169, 149, 119, 0.2);
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.resultado-foto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.25s ease;
+}
+
+.resultado-foto:hover img {
+    transform: scale(1.025);
+}
+
+.resultado-foto:focus-visible {
+    outline: 2px solid var(--dourado-claro);
+    outline-offset: 3px;
+}
+
+.visualizador-imagem {
+    position: relative;
+    width: min(1100px, 94vw);
+    max-width: 94vw;
+    max-height: 92vh;
+    padding: 58px 16px 16px;
+    overflow: auto;
+    border: 1px solid rgba(169, 149, 119, 0.5);
+    background: var(--oliva-escuro);
+    color: var(--branco);
+}
+
+.visualizador-imagem::backdrop {
+    background: rgba(10, 14, 8, 0.92);
+}
+
+.visualizador-imagem > img {
+    display: block;
+    width: 100%;
+    max-height: calc(92vh - 76px);
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.visualizador-fechar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    min-height: 36px;
+    padding: 6px 12px;
+    border: 1px solid var(--dourado);
+    background: transparent;
+    color: var(--branco);
+    cursor: pointer;
+}
+
+.etapa-experiencia {
+    max-width: 900px;
+    margin-top: 42px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(169, 149, 119, 0.3);
+}
+
+.sua-experiencia p:not(.secao-subtitulo) {
+    max-width: 900px;
+}
+
+.contato {
+    background-color: var(--oliva-suave);
+}
+
+
+/* =====================================================
+   TÍTULOS DAS SEÇÕES
+===================================================== */
+
+.secao-subtitulo {
+    margin-bottom: 15px;
+
+    color: var(--dourado);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.quem-sou-eu h2,
+.sua-experiencia h2,
+.procedimentos h2,
+.resultados h2,
+.contato h2 {
+    margin-bottom: 25px;
+
+    color: var(--branco);
+
+    font-size: clamp(32px, 4vw, 50px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+.quem-sou-eu p:not(.secao-subtitulo),
+.resultados p:not(.secao-subtitulo),
+.sua-experiencia p:not(.secao-subtitulo),
+.contato p:not(.secao-subtitulo) {
+    max-width: 700px;
+
+    color: var(--cinza);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.sua-experiencia p.sua-experiencia-fecho {
+    max-width: none;
+    margin: 34px auto 4px;
+    color: var(--dourado-claro);
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.sua-experiencia p.sua-experiencia-subfecho {
+    max-width: 900px;
+    margin: 0 auto 18px;
+    text-align: center;
+}
+
+/* =====================================================
+   PROCEDIMENTOS
+===================================================== */
+
+.procedimentos-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    margin-top: 55px;
+}
+
+.card-procedimento {
+    min-height: 200px;
+
+    padding: 40px 30px;
+
+    border: 1px solid rgba(169, 149, 119, 0.25);
+
+    background-color: var(--oliva-escuro);
+
+    transition: 0.3s ease;
+}
+
+.card-procedimento:hover {
+    border-color: var(--dourado);
+
+    transform: translateY(-8px);
+}
+
+.card-procedimento h3 {
+    margin-bottom: 20px;
+
+    color: var(--dourado-claro);
+
+    font-size: 24px;
+
+    font-weight: 400;
+}
+
+.procedimento-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.procedimento-toggle h3 {
+    margin-bottom: 20px;
+}
+
+.procedimento-toggle span {
+    margin-bottom: 20px;
+    color: var(--dourado-claro);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.procedimento-toggle:focus-visible {
+    outline: 2px solid var(--dourado-claro);
+    outline-offset: 5px;
+}
+
+.procedimento-detalhes {
+    margin-top: 36px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(169, 149, 119, 0.3);
+}
+
+.procedimento-detalhes[hidden] {
+    display: none;
+}
+
+.procedimento-detalhes h3 {
+    margin-bottom: 20px;
+    color: var(--dourado-claro);
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.procedimento-detalhes h4 {
+    margin: 28px 0 14px;
+    color: var(--dourado-claro);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.procedimento-detalhes p {
+    max-width: 900px;
+    margin-bottom: 18px;
+    color: var(--cinza);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.procedimento-detalhes .procedimento-lista-titulo {
+    margin-top: 28px;
+    color: var(--branco);
+}
+
+.procedimento-detalhes ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 32px;
+    margin: 0;
+    padding-left: 22px;
+    color: var(--cinza);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+.procedimento-detalhes li::marker {
+    color: var(--dourado);
+}
+
+.card-procedimento p {
+    color: var(--cinza);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   CONTATO
+===================================================== */
+
+.contato {
+    text-align: center;
+}
+
+.contato .container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.contato p:not(.secao-subtitulo) {
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+.footer {
+    padding: 30px 0;
+
+    border-top: 1px solid rgba(169, 149, 119, 0.15);
+
+    background-color: var(--oliva-escuro);
+
+    text-align: center;
+}
+
+.footer p {
+    color: #777;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+}
+
+.footer-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--dourado-claro);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.privacy-header .header-container {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.privacy-back-link {
+    color: var(--dourado-claro);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.pagina-privacidade {
+    min-height: 100vh;
+    padding: 135px 0 90px;
+    background-color: var(--oliva-profundo);
+}
+
+.pagina-privacidade .container {
+    max-width: 900px;
+}
+
+.pagina-privacidade h1 {
+    margin-bottom: 18px;
+    color: var(--branco);
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.pagina-privacidade h2 {
+    margin: 0 0 12px;
+    color: var(--dourado-claro);
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.pagina-privacidade p,
+.pagina-privacidade li {
+    color: var(--cinza);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.pagina-privacidade p {
+    margin-bottom: 14px;
+}
+
+.pagina-privacidade section {
+    margin-top: 34px;
+}
+
+.pagina-privacidade ul {
+    margin: 0 0 16px;
+    padding-left: 24px;
+}
+
+.pagina-privacidade a:not(.privacy-back-link) {
+    color: var(--dourado-claro);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 900px) {
+    .menu {
+        gap: 20px;
+    }
+
+    .menu a {
+        font-size: 11px;
+    }
+
+    .hero-conteudo {
+        padding-right: 28%;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 86%;
+    }
+
+    .header {
+        height: 75px;
+        background: rgba(41, 51, 33, 0.96);
+    }
+
+    .header-container {
+        align-items: center;
+        justify-content: flex-end;
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        flex-direction: column;
+        gap: 25px;
+        background-color: rgba(29, 36, 24, 0.97);
+        border-top: 1px solid rgba(169, 149, 119, 0.2);
+    }
+
+    .menu.ativo {
+        display: flex;
+    }
+
+    .menu a {
+        font-size: 12px;
+        letter-spacing: 1.2px;
+    }
+
+    .menu-mobile {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+    }
+
+    .hero {
+        height: max(82vh, 620px);
+        min-height: 82vh;
+        align-items: flex-end;
+    }
+
+    .hero-imagem {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    .hero-imagem img {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: none;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .logo-marca-dagua {
+        top: 12px;
+        left: 0;
+        width: 300px;
+        opacity: 0.12;
+    }
+
+    .hero-conteudo {
+        width: 100%;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 42px;
+    }
+
+    .hero-subtitulo {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        max-width: 260px;
+        font-size: 43px;
+        margin-bottom: 20px;
+    }
+
+    .hero-texto {
+        max-width: 290px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .botao {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .quem-sou-eu,
+    .procedimentos,
+    .resultados,
+    .sua-experiencia,
+    .contato {
+        padding: 80px 0;
+    }
+
+    .procedimentos h2,
+    .resultados h2,
+    .sua-experiencia h2,
+    .contato h2 {
+        font-size: 34px;
+    }
+
+    .quem-sou-eu p:not(.secao-subtitulo),
+    .resultados p:not(.secao-subtitulo),
+    .sua-experiencia p:not(.secao-subtitulo),
+    .contato p:not(.secao-subtitulo) {
+        font-size: 15px;
+    }
+
+    .sua-experiencia p.sua-experiencia-fecho {
+        font-size: 24px;
+    }
+
+    .procedimentos-grid,
+    .resultados-galeria,
+    .sua-experiencia-galeria,
+    .procedimento-detalhes ul {
+        grid-template-columns: 1fr;
+    }
+
+    .procedimentos-grid {
+        margin-top: 35px;
+        gap: 18px;
+    }
+
+    .procedimento-detalhes ul {
+        gap: 8px;
+    }
+
+    .resultados-galeria,
+    .sua-experiencia-galeria {
+        gap: 18px;
+    }
+
+    .card-procedimento {
+        min-height: auto;
+        padding: 30px 25px;
+    }
+
+    .pagina-privacidade {
+        padding-top: 110px;
+    }
+
+    .pagina-privacidade h1 {
+        font-size: 32px;
+    }
+
+    .pagina-privacidade h2 {
+        font-size: 20px;
+    }
+}
